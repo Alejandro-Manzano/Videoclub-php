@@ -5,27 +5,23 @@ declare(strict_types=1);
 class Soporte {
 
    public function __construct(
-        private string $titulo, 
-        private int $numero, 
+        public string $titulo, 
+        protected int $numero, 
         private float $precio)
     {}
 
-    public function getPrecio(): int {
+    public function getPrecio(): float {
         return $this->precio;
     }
 
-    public function getPrecioconIva(): float {
+    public function getPrecioconIVA(): float {
         return $this->precio * 1.21;
     }
 
-    public function mostrarResumen(): string {
-       
+    public function muestraResumen(): string {
+        return "Precio: " .$this->precio. ", precio con iva: " .self::getPrecioconIVA(). ", titulo : " .$this->titulo;
     }
 
 }
-
-    $soporte = new Soporte("Rana", 2632, 21);
-
-    echo $soporte->getPrecioconIva();
 
 ?>
