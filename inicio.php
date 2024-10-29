@@ -23,4 +23,11 @@ include "dvd.php";
     echo "<br>Precio IVA incluido: " . $miDvd->getPrecioConIva() . " euros<br>";
     echo $miDvd->muestraResumen();
 
+include "juego.php";
+    $miJuego = new Juego("The Last of Us Part II", 26, 49.99, "PS4", 1, 1);
+    echo "<br><br><strong>" . $miJuego->titulo . "</strong>";
+    echo "<br>Precio: " . $miJuego->getPrecio() . " euros";
+    echo "<br>Precio IVA incluido: " . $miJuego->getPrecioConIva() . "euros <br>";
+    echo $miJuego->muestraResumen();
+
 ?>
